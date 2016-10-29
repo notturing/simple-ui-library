@@ -18,7 +18,6 @@ class Button {
 		RectangleShape bt;
 		Text text;
 		RenderWindow *rw;
-		Font *font;
 		int click;		
 				
 	public:
