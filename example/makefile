@@ -1,4 +1,4 @@
-OBJ = main.o simple-ui-library/button.o
+OBJ = main.o ../button.o
 LIBS = -lsfml-graphics -lsfml-system -lsfml-window
 
 all: $(OBJ)

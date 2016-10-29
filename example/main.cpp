@@ -1,6 +1,6 @@
 #include<SFML/Graphics.hpp>
 #include<iostream>
-#include "simple-ui-library/suil.hpp"
+#include "../suil.hpp"
 
 using namespace std;
 using namespace sf;
