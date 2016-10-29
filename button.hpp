@@ -6,6 +6,7 @@
 
 #define BT_COLOR_DEFAULT 150,150,150
 #define BT_COLOR_CLICKED 100,100,100
+#define BT_COLOR_TEXT 255,255,255
 
 using namespace std;
 using namespace sf;
@@ -15,11 +16,13 @@ class Button {
 		string name;
 		int x,y,w,h;
 		RectangleShape bt;
-		RenderWindow *rw;		
+		Text text;
+		RenderWindow *rw;
+		Font *font;
 		int click;		
 				
 	public:
-		Button( string, RenderWindow&, int, int, int, int);
+		Button( string, RenderWindow&, Font&, int, int, int, int);
 		void draw();
 		bool pressed();
 };
