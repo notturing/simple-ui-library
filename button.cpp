@@ -16,6 +16,10 @@ Button::Button( string name, RenderWindow &rw, Font &font, int x, int y, int w, 
 	this->text.setString( name);	
 	this->text.setCharacterSize(14);
 	this->text.setColor( Color(BT_COLOR_TEXT));
+	FloatRect center = this->text.getLocalBounds();
+	float cx = ( center.left + center.width ) / 2;
+	float cy = ( center.top + center.height ) / 2;		
+	this->text.setPosition( Vector2f( this->x + (this->w/2) - cx, this->y + (this->h/2) - cy));
 }
 
 void Button::draw(){	
@@ -24,12 +28,7 @@ void Button::draw(){
 	} else {
 		this->bt.setFillColor( Color(BT_COLOR_DEFAULT));
 	}	
-	this->rw->draw( this->bt);	
-	FloatRect center = this->text.getLocalBounds();
-	float cx = ( center.left + center.width ) / 2;
-	float cy = ( center.top + center.height ) / 2;
-		
-	this->text.setPosition( Vector2f( this->x + (this->w/2) - cx, this->y + (this->h/2) - cy));
+	this->rw->draw( this->bt);		
 	this->rw->draw( this->text);
 }
 
