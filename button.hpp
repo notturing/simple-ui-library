@@ -12,8 +12,7 @@ using namespace std;
 using namespace sf;
 
 class Button {
-	private:
-		string name;
+	private:		
 		int x,y,w,h;
 		RectangleShape bt;
 		Text text;
