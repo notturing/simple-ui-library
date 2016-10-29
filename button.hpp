@@ -4,6 +4,9 @@
 #include<string>
 #include<SFML/Graphics.hpp>
 
+#define BT_COLOR_DEFAULT 150,150,150
+#define BT_COLOR_CLICKED 100,100,100
+
 using namespace std;
 using namespace sf;
 

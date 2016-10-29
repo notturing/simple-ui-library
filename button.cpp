@@ -8,9 +8,9 @@ Button::Button( string name, RenderWindow& rw, int x, int y, int w, int h) : nam
 
 void Button::draw(){	
 	if( this->click == 1){
-		this->bt.setFillColor( Color::Green);
+		this->bt.setFillColor( BT_COLOR_CLICKED);
 	} else {
-		this->bt.setFillColor( Color::Blue);
+		this->bt.setFillColor( BT_COLOR_DEFAULT);
 	}	
 	this->rw->draw( this->bt);
 }
