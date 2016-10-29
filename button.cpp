@@ -1,9 +1,21 @@
 #include "button.hpp"
+#include<iostream>
 
-Button::Button( string name, RenderWindow& rw, int x, int y, int w, int h) : name(name), x(x), y(y), w(w), h(h), rw(&rw) {
+using namespace std;
+
+Button::Button( string name, RenderWindow &rw, Font &font, int x, int y, int w, int h){	
+	this->x = x;
+	this->y = y;
+	this->w = w;
+	this->h = h;
+	this->rw = &rw;	
 	this->bt.setSize( Vector2f( w, h));
 	this->bt.setPosition( Vector2f( x, y));
 	this->bt.setFillColor( Color::Red);
+	this->text.setFont( font);
+	this->text.setString( name);	
+	this->text.setCharacterSize(14);
+	this->text.setColor( Color(BT_COLOR_TEXT));
 }
 
 void Button::draw(){	
@@ -12,7 +24,13 @@ void Button::draw(){
 	} else {
 		this->bt.setFillColor( Color(BT_COLOR_DEFAULT));
 	}	
-	this->rw->draw( this->bt);
+	this->rw->draw( this->bt);	
+	FloatRect center = this->text.getLocalBounds();
+	float cx = ( center.left + center.width ) / 2;
+	float cy = ( center.top + center.height ) / 2;
+		
+	this->text.setPosition( Vector2f( this->x + (this->w/2) - cx, this->y + (this->h/2) - cy));
+	this->rw->draw( this->text);
 }
 
 
